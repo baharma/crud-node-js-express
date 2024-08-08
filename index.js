@@ -24,6 +24,15 @@ app.get('/comments',(req,res)=>{
     res.render('coments/index',{dataComment})
 })
 
+app.get('/create',(req,res)=>{
+    res.render('coments/create',{dataComment})
+})
+
+app.post('/create',(req,res)=>{
+    const { nama, text } = req.body;
+    dataComment.push({ nama, text });
+   res.send('es')
+})
 
 app.get('/order',(req,res)=>{
     res.send("get ")
